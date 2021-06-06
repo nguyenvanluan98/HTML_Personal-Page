@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Page</title>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    /* full màng hình */
+    body,
+    html {
+      height: 100%;
+      margin: 2;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+   
+    .tablink {
+      background-color: yellowgreen;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+      width: 25%;
+    }
+
+    .tablink:hover {
+      background-color: rgb(27, 197, 209);
+    }
+
+
+    .tabcontent {
+      color: white;
+      display: none;
+      padding: 100px 20px;
+      height: 100%;
+
+    }
+
+    .head {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .name {
+      float: right;
+
+    }
+
+    #Home {
+      background-image:url('hand-painted-watercolor-background-with-sky-clouds-shape.jpg');
+    }
+
+    #News {
+      background-image: url('Hình-nền-background-vector-scaled.jpg');
+    }
+
+    #Contact {
+      background-image: url('Hình-nền-background-vector-scaled.jpg');
+    }
+
+    #About {
+      background-image: url('Hình-nền-background-vector-scaled.jpg');
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <h2 style="text-align: center;"> GIỚI THIỆU VỀ BẢN THÂN </h2>
+    <p>NGUYỄN VĂN LUÂN</p>
+    <p>Developer Javascript</p>
+  </div>
+
+  <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">SƠ LƯỢT VỀ BẢN THÂN</button>
+  <button class="tablink" onclick="openPage('News', this, 'green')">TÌNH TRẠNG HÔN NHÂN</button>
+  <button class="tablink" onclick="openPage('Contact', this, 'blue')">CÁC SKILL</button>
+  <button class="tablink" onclick="openPage('About', this, 'orange')">SỞ THÍCH</button>
+
+  <div id="Home" class="tabcontent">
+    <h1>Giới thiệu bản thân</h1>
+
+    <img src="page.jpg" width="300" height="400"; style="border: 5px; " title="ảnh_của_luân">
+
+    <div class="name">
+      <p> <strong>Họ và tên:</strong> Nguyễn văn Luân</p>
+      <p> <strong>Tuối:</strong> 23 Tuổi</p>
+      <p> <strong>Sinh sống:</strong> Thành Phố Đà Nẵng</p>
+    </div>
+  </div>
+
+  <div id="News" class="tabcontent">
+    <h1 style="text-align: center;">ĐỘC THÂN</h1>
+    <h1 style="font-style: italic;">ĐỘC THÂN KHÔNG PHẢI LÀ Ế </h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6MytkoDoTFs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+    <h1 style="font-style: italic; text-align: right;">Ở VẬY CHO GÁI THÈM CHƠI</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/QcPK9lPJP4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+   
+
+  <div id="Contact" class="tabcontent">
+    <h1 style="text-align: center;">CÁC SKILL HTML CƠ BẢN</h1>
+    <div class="bullet point">
+      <ul>
+        <li>HTML / CSS / JS</li>
+        <li>Git và Github</li>
+        <li>Browser DevTools</li>
+        <li>MVC (Model, View, Controller)</li>
+        <li> Kiểm tra code hay write test</li>
+      </ul>
+    </div>
+    
+  </div>
+
+  <div id="About" class="tabcontent">
+<h1 style="text-align: center;">SỞ THÍCH CỦA TÔI</h1>
+  </div>
+
+  <script>
+    function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    document.getElementById("defaultOpen").click();
+  </script>
+
+</body>
+
+</html>
